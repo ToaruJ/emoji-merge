@@ -19,6 +19,7 @@ def lightStretch(brG, dkG, factor):
     return brGPixel, dkGPixel
 
 
+# 计算每个像素的色彩
 def pixelEval(brPixel, dkPixel):
     alpha = int(255 + dkPixel - brPixel)
     light = 0 if alpha == 0 else round(dkPixel * 255 / alpha)
@@ -63,14 +64,15 @@ class SetLightBar:
     def setfactor(self,*args):
         if args[0] == 'scroll':
             if args[1] == '1':
-                self.num.set(min(float(self.num.get()) + 0.1, 1))
+                self.num.set(round(min(float(self.num.get()) + 0.1, 1), 4))
             else:
-                self.num.set(max(0, float(self.num.get()) - 0.1))
+                self.num.set(round(max(0, float(self.num.get()) - 0.1), 4))
         elif args[0] == 'moveto':
-            self.num.set(float(args[1]))
+            self.num.set(round(float(args[1]), 4))
         self.bar.set(self.num.get(), self.num.get())
 
 
+# 主要UI界面
 class MainBox:
     def __init__(self):
         self.tk = Tk()
@@ -88,6 +90,7 @@ class MainBox:
         self.startButton = Button(self.tk, text='开始合成', command=self.merge)
         self.startButton.pack(pady=5)
 
+    # 合成图片主代码
     def merge(self):
         if self.brPBox.graphPath.get() and\
                 self.dkPBox.graphPath.get() and\
