@@ -9,13 +9,13 @@
 
 根据背景叠放规则，可建立方程组
 
-![](https://latex.codecogs.com/png.latex?%5Cbegin%7Bcases%7D%20d%5Ctimes%5Calpha%20%3Dd_%7Bdark%7D%26%28dark%29%5C%5C%20d%5Ctimes%5Calpha&plus;255%5Ctimes%281-%5Calpha%29%3Dd_%7Blight%7D%26%28bright%29%5C%5C%20%5Cend%7Bcases%7D)
+![](https://latex.codecogs.com/png.latex?%5Cbegin%7Bcases%7D%20d%5Ctimes%5Calpha%20%3Dd_%7Bdark%7D%26%28dark%29%5C%5C%20d%5Ctimes%5Calpha&plus;255%5Ctimes%281-%5Calpha%29%3Dd_%7Bbright%7D%26%28bright%29%5C%5C%20%5Cend%7Bcases%7D)
 
 解方程组得
 
-![](https://latex.codecogs.com/png.latex?%5Cbegin%7Bcases%7D%20%5Calpha%3D%5Cfrac%7B1%7D%7B255%7D%28255%20-%20d_%7Blight%7D&plus;d_%7Bdark%7D%29%5C%5C%20d%3D%5Cfrac%7B1%7D%7B%5Calpha%7Dd_%7Bdark%7D%5C%5C%20%5Cend%7Bcases%7D)
+![](https://latex.codecogs.com/png.latex?%5Cbegin%7Bcases%7D%20%5Calpha%3D%5Cfrac%7B1%7D%7B255%7D%28255%20-%20d_%7Bbright%7D&plus;d_%7Bdark%7D%29%5C%5C%20d%3D%5Cfrac%7B1%7D%7B%5Calpha%7Dd_%7Bdark%7D%5C%5C%20%5Cend%7Bcases%7D)
 
-* 注：为使结果有意义（ *α* 和 *d* 在设定值域内），需满足条件 ![](https://latex.codecogs.com/png.latex?d_%7Blight%7D%5Cge%20d_%7Bdark%7D) 。实际程序中会将输入的两幅图像进行线性拉伸，以满足该条件。“亮度调节”功能可以调节两幅图像拉伸时的灰度值交汇点。
+* 注：为使结果有意义（ *α* 和 *d* 在设定值域内），需满足条件 ![](https://latex.codecogs.com/png.latex?d_%7Bbright%7D%5Cge%20d_%7Bdark%7D) 。实际程序中会将输入的两幅图像进行线性拉伸，以满足该条件。“亮度调节”功能可以调节两幅图像拉伸时的灰度值交汇点。
 
 ## 历代版本
 ### v1.0
